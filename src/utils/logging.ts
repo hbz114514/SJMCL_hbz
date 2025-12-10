@@ -14,7 +14,7 @@ export const logger = {
   trace: async (...args: any[]) => trace(args.map(formatArg).join(" ")),
 };
 
-export function setupLogger() {
+export function setuplogger() {
   if (typeof window !== "undefined" && !(window as any).log) {
     (window as any).logger = logger;
   }

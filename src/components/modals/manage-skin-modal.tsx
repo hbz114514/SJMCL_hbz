@@ -167,7 +167,7 @@ const ManageSkinModal: React.FC<ManageSkinModalProps> = ({
           });
         }
       } catch (e: any) {
-        console.log(e);
+        logger(e);
         error(e.message);
       } finally {
         setIsLoading(false);
