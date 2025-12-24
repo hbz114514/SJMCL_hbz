@@ -82,7 +82,7 @@ pub enum LauncherVisiablity {
 //
 structstruck::strike! {
   #[strikethrough[derive(Partial, Debug, PartialEq, Eq, Clone, Deserialize, Serialize)]]
-  #[strikethrough[serde(rename_all = "camelCase", deny_unknown_fields)]]
+  #[strikethrough[serde(rename_all = "camelCase")]]
   #[strikethrough[derive(SmartDefault)]]
   #[strikethrough[serde(default)]]
   pub struct GameConfig {
@@ -166,7 +166,7 @@ pub enum ProxyType {
 
 structstruck::strike! {
   #[strikethrough[derive(Partial, Debug, PartialEq, Eq, Clone, Deserialize, Serialize)]]
-  #[strikethrough[serde(rename_all = "camelCase", deny_unknown_fields)]]
+  #[strikethrough[serde(rename_all = "camelCase")]]
   #[strikethrough[derive(SmartDefault)]]
   #[strikethrough[serde(default)]]
   pub struct LauncherConfig {
@@ -253,6 +253,7 @@ structstruck::strike! {
         pub launch_page_quick_switch: bool,
         #[default = true]
         pub resource_translation: bool, // only available in zh-Hans
+        #[default = true]
         pub skip_first_screen_options: bool,  // only available in zh-Hans
       },
       pub advanced: struct GeneralConfigAdvanced {
