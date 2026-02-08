@@ -2,6 +2,7 @@ import { t } from "i18next";
 import { ModLoaderType } from "@/enums/instance";
 import { GameDirectory } from "@/models/config";
 import { InstanceSummary } from "@/models/instance/misc";
+import { isDirNameValid } from "./string";
 
 export const generateInstanceDesc = (instance: InstanceSummary) => {
   if (instance.modLoader.loaderType === ModLoaderType.Unknown) {
@@ -58,4 +59,9 @@ export const parseModLoaderVersion = (version: string): string => {
   }
 
   return version;
+};
+
+export const isInstanceNameValid = (name: string): number => {
+  if (name === "sjmclcfg") return 2;
+  return isDirNameValid(name);
 };
